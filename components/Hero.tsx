@@ -30,13 +30,13 @@ export default function Hero() {
           New York
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="px-8 py-4 bg-white text-black rounded-full font-semibold hover:bg-gray-100 transition flex items-center justify-center gap-2 group">
-            Shop Now
-            <ArrowRight size={20} className="group-hover:translate-x-1 transition" />
-          </button>
-          <button className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-black transition">
-            Explore
-          </button>
+          <button className="px-8 py-4 bg-black text-white rounded-full font-semibold hover:bg-gray-800 transition flex items-center justify-center gap-2 group">
+  Shop Now
+  <ArrowRight size={20} className="group-hover:translate-x-1 transition" />
+</button>
+          <button className="px-8 py-4 bg-transparent border-2 border-black text-black rounded-full font-semibold hover:bg-black hover:text-white transition">
+  Explore Art
+</button>
         </div>
       </div>
     </section>

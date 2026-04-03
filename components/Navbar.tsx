@@ -61,7 +61,7 @@ export default function Navbar() {
             Art
           </Link>
           <Link href="/journal" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
-            Journal
+            Film
           </Link>
           <Link href="/about" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
             About
