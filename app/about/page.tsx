@@ -84,6 +84,20 @@ export default function AboutPage() {
               <p className="text-xs text-gray-400 mt-3">For professional inquiries only</p>
             </div>
 
+            {/* Social Link */}
+<div className="mt-6 flex justify-center">
+  <a 
+    href="https://instagram.com/_stephaniecheng" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white rounded-full hover:shadow-lg transition"
+  >
+    <span>📸</span>
+    Follow on Instagram
+    <span>→</span>
+  </a>
+</div>
+
             {/* Call to Action */}
             <div className="text-center mt-16">
               <a 
