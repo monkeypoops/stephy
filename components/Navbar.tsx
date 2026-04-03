@@ -28,6 +28,9 @@ export default function Navbar() {
   <Link href="/about" className="text-sm hover:text-gray-500 transition">
     About
   </Link>
+  <Link href="/contact" className="text-sm hover:text-gray-500 transition">
+  Contact
+</Link>
   <button className="ml-4 px-4 py-2 bg-black text-white text-sm rounded-full hover:bg-gray-800 transition">
     Login
   </button>
@@ -59,6 +62,9 @@ export default function Navbar() {
   <Link href="/about" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
     About
   </Link>
+  <Link href="/contact" className="text-sm hover:text-gray-500 transition">
+  Contact
+</Link>
   <button className="mt-4 px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition">
     Login
   </button>
