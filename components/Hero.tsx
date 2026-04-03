@@ -34,8 +34,8 @@ export default function Hero() {
   Shop Now
   <ArrowRight size={20} className="group-hover:translate-x-1 transition" />
 </button>
-          <button className="px-8 py-4 bg-transparent border-2 border-black text-black rounded-full font-semibold hover:bg-black hover:text-white transition">
-  Explore Art
+          <button className="px-8 py-4 bg-white text-black border-2 border-black rounded-full font-semibold hover:bg-black hover:text-white transition">
+  Explore
 </button>
         </div>
       </div>
