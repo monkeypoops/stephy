@@ -18,24 +18,20 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center gap-8">
-              <Link href="/shop" className="text-sm hover:text-gray-500 transition">
-                Shop
-              </Link>
-              <Link href="/art" className="text-sm hover:text-gray-500 transition">
-                Art
-              </Link>
-              <Link href="/film" className="text-sm hover:text-gray-500 transition">
-                Film
-              </Link>
-              <Link href="/about" className="text-sm hover:text-gray-500 transition">
-                About
-              </Link>
-              <button className="ml-4 px-4 py-2 bg-black text-white text-sm rounded-full hover:bg-gray-800 transition">
-                Login
-              </button>
-            </div>
-
+         <div className="hidden md:flex items-center gap-8">
+  <Link href="/shop" className="text-sm hover:text-gray-500 transition">
+    Shop
+  </Link>
+  <Link href="/art" className="text-sm hover:text-gray-500 transition">
+    Art
+  </Link>
+  <Link href="/about" className="text-sm hover:text-gray-500 transition">
+    About
+  </Link>
+  <button className="ml-4 px-4 py-2 bg-black text-white text-sm rounded-full hover:bg-gray-800 transition">
+    Login
+  </button>
+</div>
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -53,23 +49,20 @@ export default function Navbar() {
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex flex-col items-center justify-center h-full gap-8 text-xl">
-          <Link href="/shop" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
-            Shop
-          </Link>
-          <Link href="/art" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
-            Art
-          </Link>
-          <Link href="/film" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
-            Film
-          </Link>
-          <Link href="/about" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
-            About
-          </Link>
-          <button className="mt-4 px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition">
-            Login
-          </button>
-        </div>
+      <div className="flex flex-col items-center justify-center h-full gap-8 text-xl">
+  <Link href="/shop" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
+    Shop
+  </Link>
+  <Link href="/art" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
+    Art
+  </Link>
+  <Link href="/about" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
+    About
+  </Link>
+  <button className="mt-4 px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition">
+    Login
+  </button>
+</div>
       </div>
     </>
   );
