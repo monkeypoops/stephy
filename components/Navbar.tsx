@@ -25,8 +25,8 @@ export default function Navbar() {
               <Link href="/art" className="text-sm hover:text-gray-500 transition">
                 Art
               </Link>
-              <Link href="/journal" className="text-sm hover:text-gray-500 transition">
-                Journal
+              <Link href="/film" className="text-sm hover:text-gray-500 transition">
+                Film
               </Link>
               <Link href="/about" className="text-sm hover:text-gray-500 transition">
                 About
@@ -60,7 +60,7 @@ export default function Navbar() {
           <Link href="/art" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
             Art
           </Link>
-          <Link href="/journal" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
+          <Link href="/film" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
             Film
           </Link>
           <Link href="/about" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
