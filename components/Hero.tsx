@@ -15,7 +15,7 @@ export default function Hero() {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src="/videos/nyc-bg.mp4" type="video/mp4" />
+          <source src="/videos/the-perfect-christmas.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/30" />
       </div>

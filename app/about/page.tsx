@@ -1,7 +1,5 @@
-"use client";
-
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Image from "next/image";
 
 export default function AboutPage() {
   return (
@@ -11,7 +9,6 @@ export default function AboutPage() {
         
         {/* Hero Section with Video Background */}
         <section className="relative h-screen flex items-center justify-center overflow-hidden">
-          {/* Background Video */}
           <div className="absolute inset-0 z-0">
             <video
               autoPlay
@@ -20,98 +17,150 @@ export default function AboutPage() {
               playsInline
               className="w-full h-full object-cover"
             >
-              <source src="/grandcentral.mp4" type="video/mp4" />
+              <source src="/videos/the-perfect-christmas.mp4" type="video/mp4" />
             </video>
-            {/* Dark overlay for text readability */}
             <div className="absolute inset-0 bg-black/40" />
           </div>
-
-          {/* Text Overlay */}
           <div className="relative z-10 text-center text-white px-4">
-            <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-4">
-              Stephy
-            </h1>
-            <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
-              Actor. Writer. Storyteller.
-            </p>
+            <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-4">About Stephy</h1>
+            <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">Actor. Writer. Storyteller.</p>
           </div>
         </section>
 
-        {/* Bio Section - More personal, less generic */}
+        {/* Bio Section */}
         <section className="py-24 bg-white">
           <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8">
             
-            {/* Quote / Tagline */}
-            <div className="text-center mb-16">
-              <p className="text-2xl md:text-3xl text-gray-700 italic leading-relaxed">
-                "Born and raised in New York City. Storytelling is in my blood."
-              </p>
-              <div className="w-16 h-0.5 bg-black mx-auto mt-8" />
+            {/* Headshot and Bio */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+              <div className="flex justify-center">
+                <div className="relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
+                  <Image src="/headshot.jpg" alt="Stephanie Cheng Headshot" fill className="object-cover" />
+                </div>
+              </div>
+              <div className="flex flex-col justify-center">
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Stephy (Stephanie Cheng) is an Asian American actor born and raised in <span className="font-semibold">New York City</span>. 
+                  The city that never sleeps shaped her voice, her drive, and her relentless pursuit of stories that matter.
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  She speaks <span className="font-semibold">Mandarin, Cantonese, and Fuzhounese</span> — a reflection of her heritage 
+                  and a bridge to telling authentic Asian American narratives.
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Her feature-length script <span className="italic font-semibold">Half the Sky</span>, about the first Chinese 
+                  American female pilot during WWII, was a <span className="font-semibold">quarterfinalist at Austin Film Festival</span> and a 
+                  <span className="font-semibold"> second rounder at Sundance Film Institute</span>.
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Whether on screen or on the page, Stephy brings depth, vulnerability, and an unapologetic truth to every character 
+                  and every story she tells.
+                </p>
+
+                <div className="mt-6">
+                  <a href="https://instagram.com/_stephaniecheng" target="_blank" rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white rounded-full hover:shadow-lg transition">
+                    <span>📸</span> Follow on Instagram <span>→</span>
+                  </a>
+                </div>
+
+                <div className="bg-gray-50 rounded-2xl p-4 mt-6">
+                  <p className="font-semibold">Representation:</p>
+                  <p>Ken Park Talent Management</p>
+                  <p className="text-sm text-gray-600">(212) 566-8672</p>
+                </div>
+              </div>
             </div>
 
-            {/* Bio Content */}
-            <div className="space-y-6 text-gray-700 leading-relaxed">
-              <p className="text-lg">
-                Stephy (Stephanie Cheng) is an Asian American actor born and raised in <span className="font-semibold">New York City</span>. 
-                The city that never sleeps shaped her voice, her drive, and her relentless pursuit of stories that matter.
-              </p>
-              
-              <p>
-                She speaks <span className="font-semibold">Mandarin, Cantonese, and Fuzhounese</span> — a reflection of her heritage 
-                and a bridge to telling authentic Asian American narratives.
-              </p>
-
-              <p>
-                Her feature-length script <span className="italic font-semibold">Half the Sky</span>, about the first Chinese American 
-                female pilot during WWII, was a <span className="font-semibold">quarterfinalist at Austin Film Festival</span> and a 
-                <span className="font-semibold"> second rounder at Sundance Film Institute</span>.
-              </p>
-
-              <p>
-                Whether on screen or on the page, Stephy brings depth, vulnerability, and an unapologetic truth to every character 
-                and every story she tells.
-              </p>
+            {/* Films & Projects Section - All 4 films */}
+            <div className="border-t border-gray-100 pt-12 mt-8">
+              <h2 className="text-2xl font-semibold mb-6 text-center">Featured Work</h2>
+              <p className="text-center text-gray-600 mb-8">Films and projects I've been part of</p>
+              <div className="flex flex-wrap justify-center items-start gap-6 md:gap-8 mb-16">
+                {/* Past Lives */}
+                <div className="w-28 h-40 md:w-32 md:h-48 relative overflow-hidden rounded-lg shadow-md">
+                  <Image
+                    src="/images/films/past-lives.jpg"
+                    alt="Past Lives"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                {/* Biodivercity */}
+                <div className="w-28 h-40 md:w-32 md:h-48 relative overflow-hidden rounded-lg shadow-md">
+                  <Image
+                    src="/images/films/biodivercity.jpg"
+                    alt="Biodivercity"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                {/* Xenogender */}
+                <div className="w-28 h-40 md:w-32 md:h-48 relative overflow-hidden rounded-lg shadow-md">
+                  <Image
+                    src="/images/films/xenogender.jpg"
+                    alt="Xenogender"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                {/* First Contact */}
+                <div className="w-28 h-40 md:w-32 md:h-48 relative overflow-hidden rounded-lg shadow-md">
+                  <Image
+                    src="/images/films/first-contact.jpg"
+                    alt="First Contact"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
             </div>
 
-            {/* Agent Card - More prominent */}
-            <div className="mt-12 p-6 bg-gray-50 rounded-2xl border-l-4 border-black">
-              <p className="text-sm uppercase tracking-wider text-gray-500 mb-2">Representation</p>
-              <p className="text-xl font-semibold">Ken Park Talent Management</p>
-              <p className="text-gray-600 mt-1">
-                <a href="tel:+12125668672" className="hover:text-black transition">
-                  (212) 566-8672
-                </a>
-              </p>
-              <p className="text-xs text-gray-400 mt-3">For professional inquiries only</p>
-            </div>
-
-            {/* Social Link */}
-<div className="mt-6 flex justify-center">
-  <a 
-    href="https://instagram.com/_stephaniecheng" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white rounded-full hover:shadow-lg transition"
-  >
-    <span>📸</span>
-    Follow on Instagram
-    <span>→</span>
-  </a>
-</div>
-
-            {/* Call to Action */}
-            <div className="text-center mt-16">
-              <a 
-                href="/contact" 
-                className="inline-block px-8 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition"
-              >
-                Work With Me
-              </a>
+            {/* Nonprofits & Community Section - With flexible sizing for wide logos */}
+            <div className="border-t border-gray-100 pt-12">
+              <h2 className="text-2xl font-semibold mb-6 text-center">Community & Partnerships</h2>
+              <p className="text-center text-gray-600 mb-8">Organizations I'm proud to support and work with</p>
+              <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+                {/* Chinatown YMCA - standard box */}
+                <div className="w-32 h-20 relative overflow-hidden rounded-lg shadow-md bg-white">
+                  <Image
+                    src="/images/partners/chinatown-ymca.jpg"
+                    alt="Chinatown YMCA"
+                    fill
+                    className="object-contain p-2"
+                  />
+                </div>
+                {/* Charles B Wang Community Health Center - wider box for wide logo */}
+                <div className="w-48 h-20 relative overflow-hidden rounded-lg shadow-md bg-white">
+                  <Image
+                    src="/images/partners/cbwchc.jpg"
+                    alt="Charles B Wang Community Health Center"
+                    fill
+                    className="object-contain p-2"
+                  />
+                </div>
+                {/* Las Torres Patagonia - standard box */}
+                <div className="w-32 h-20 relative overflow-hidden rounded-lg shadow-md bg-white">
+                  <Image
+                    src="/images/partners/las-torres.jpg"
+                    alt="Las Torres Patagonia"
+                    fill
+                    className="object-contain p-2"
+                  />
+                </div>
+                {/* AHA - wider box for wide logo */}
+                <div className="w-48 h-20 relative overflow-hidden rounded-lg shadow-md bg-white">
+                  <Image
+                    src="/images/partners/aha.jpg"
+                    alt="AHA"
+                    fill
+                    className="object-contain p-2"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>
-      <Footer />
-
       </main>
     </>
   );
