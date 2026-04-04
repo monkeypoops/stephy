@@ -1,6 +1,7 @@
 "use client";
 
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function AboutPage() {
   return (
@@ -109,6 +110,8 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+      <Footer />
+
       </main>
     </>
   );
