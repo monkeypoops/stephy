@@ -1,22 +1,53 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   
-  // Check if we're on the homepage (where background is video)
+  // Check if we're on the homepage
   const isHomePage = pathname === "/";
   
-  // Text color: white on homepage, black on other pages
-  const textColor = isHomePage ? "text-white" : "text-black";
-  const logoColor = isHomePage ? "text-white" : "text-black";
-  const buttonBg = isHomePage ? "bg-white text-black" : "bg-black text-white";
-  const mobileMenuBg = isHomePage ? "bg-black/95" : "bg-white";
-  const mobileTextColor = isHomePage ? "text-white" : "text-black";
+  // For About page, check scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    
+    if (pathname === "/about") {
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
+  }, [pathname]);
+  
+  // Determine text color
+  let textColor = "text-white";
+  let logoColor = "text-white";
+  let buttonBg = "bg-white text-black";
+  let mobileMenuBg = "bg-black/95";
+  let mobileTextColor = "text-white";
+  
+  // On About page, change to black after scrolling
+  if (pathname === "/about" && scrolled) {
+    textColor = "text-black";
+    logoColor = "text-black";
+    buttonBg = "bg-black text-white";
+    mobileMenuBg = "bg-white";
+    mobileTextColor = "text-black";
+  }
+  
+  // On non-homepage, non-about pages (Resume, Contact), use black
+  if (pathname !== "/" && pathname !== "/about") {
+    textColor = "text-black";
+    logoColor = "text-black";
+    buttonBg = "bg-black text-white";
+    mobileMenuBg = "bg-white";
+    mobileTextColor = "text-black";
+  }
 
   return (
     <>
@@ -41,39 +72,36 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Animated Hamburger Menu Button - Mobile Only */}
+            {/* Animated Hamburger Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="md:hidden relative w-8 h-8 flex flex-col items-center justify-center gap-1.5 z-50"
               aria-label="Toggle menu"
             >
-              {/* Top line */}
               <span 
                 className={`w-6 h-0.5 rounded-full transition-all duration-300 ease-out ${
                   isOpen ? "rotate-45 translate-y-2" : ""
-                } ${textColor}`}
-                style={{ backgroundColor: isHomePage ? "white" : "black" }}
+                }`}
+                style={{ backgroundColor: textColor === "text-white" ? "white" : "black" }}
               />
-              {/* Middle line - fades out when open */}
               <span 
                 className={`w-6 h-0.5 rounded-full transition-all duration-300 ease-out ${
                   isOpen ? "opacity-0" : "opacity-100"
-                } ${textColor}`}
-                style={{ backgroundColor: isHomePage ? "white" : "black" }}
+                }`}
+                style={{ backgroundColor: textColor === "text-white" ? "white" : "black" }}
               />
-              {/* Bottom line */}
               <span 
                 className={`w-6 h-0.5 rounded-full transition-all duration-300 ease-out ${
                   isOpen ? "-rotate-45 -translate-y-2" : ""
-                } ${textColor}`}
-                style={{ backgroundColor: isHomePage ? "white" : "black" }}
+                }`}
+                style={{ backgroundColor: textColor === "text-white" ? "white" : "black" }}
               />
             </button>
           </div>
         </div>
       </nav>
 
-      {/* Mobile Menu Panel - Slides in from right */}
+      {/* Mobile Menu Panel */}
       <div
         className={`fixed top-0 right-0 bottom-0 z-40 w-full max-w-sm ${mobileMenuBg} backdrop-blur-md transform transition-transform duration-500 ease-in-out md:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
