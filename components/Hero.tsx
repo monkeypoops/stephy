@@ -21,22 +21,22 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4">
+      <div className="relative z-10 text-center px-4 w-full">
         <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-6 tracking-tighter">
           Stephy.
         </h1>
-        <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto mb-12">
+        <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto mb-12 px-4">
           For the creators, the dreamers, and the ones who do it their way.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/about">
-            <button className="px-8 py-4 bg-black text-white rounded-full font-semibold hover:bg-gray-800 transition flex items-center justify-center gap-2 group">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full">
+          <Link href="/about" className="w-full sm:w-auto">
+            <button className="w-full sm:w-auto px-8 py-4 bg-black text-white rounded-full font-semibold hover:bg-gray-800 transition flex items-center justify-center gap-2 group">
               About Me
               <ArrowRight size={20} className="group-hover:translate-x-1 transition" />
             </button>
           </Link>
-          <Link href="/resume">
-            <button className="px-8 py-4 bg-white text-black border-2 border-black rounded-full font-semibold hover:bg-black hover:text-white transition">
+          <Link href="/resume" className="w-full sm:w-auto">
+            <button className="w-full sm:w-auto px-8 py-4 bg-white text-black border-2 border-black rounded-full font-semibold hover:bg-black hover:text-white transition">
               My Resume
             </button>
           </Link>

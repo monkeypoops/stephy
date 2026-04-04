@@ -23,17 +23,17 @@ export default function ResumePage() {
             
             {/* Name and Title */}
             <div className="text-center md:text-left">
-              <h1 className="text-5xl md:text-6xl font-bold tracking-tighter mb-2">Stephanie Cheng</h1>
-              <p className="text-gray-500 text-lg">Actor | Screenwriter | Storyteller</p>
+              <h1 className="text-5xl md:text-6xl font-bold tracking-tighter mb-2 text-black">Stephanie Cheng</h1>
+              <p className="text-gray-600 text-lg">Actor | Screenwriter | Storyteller</p>
               <div className="w-16 h-0.5 bg-black mt-4 mx-auto md:mx-0" />
             </div>
           </div>
 
-          {/* Contact Info Row - Email only, no phone */}
+          {/* Contact Info Row - Email only */}
           <div className="text-center mb-12">
             <p className="text-gray-600">New York, NY</p>
             <p className="text-gray-600">
-              <a href="mailto:stephanieactor@gmail.com" className="hover:underline">
+              <a href="mailto:stephanieactor@gmail.com" className="hover:underline text-gray-600">
                 stephanieactor@gmail.com
               </a>
             </p>
@@ -41,28 +41,28 @@ export default function ResumePage() {
 
           {/* Languages */}
           <div className="mb-8">
-            <h2 className="text-xl font-semibold border-b border-black pb-2 mb-4">Languages</h2>
+            <h2 className="text-xl font-semibold border-b border-black pb-2 mb-4 text-black">Languages</h2>
             <div className="flex flex-wrap gap-3">
-              <span className="px-3 py-1 bg-gray-100 rounded-full text-sm">English (Native)</span>
-              <span className="px-3 py-1 bg-gray-100 rounded-full text-sm">Mandarin (Fluent)</span>
-              <span className="px-3 py-1 bg-gray-100 rounded-full text-sm">Cantonese (Fluent)</span>
-              <span className="px-3 py-1 bg-gray-100 rounded-full text-sm">Fuzhounese (Fluent)</span>
+              <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">English (Native)</span>
+              <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Mandarin (Fluent)</span>
+              <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Cantonese (Fluent)</span>
+              <span className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">Fuzhounese (Fluent)</span>
             </div>
           </div>
 
           {/* Training */}
           <div className="mb-8">
-            <h2 className="text-xl font-semibold border-b border-black pb-2 mb-4">Training</h2>
+            <h2 className="text-xl font-semibold border-b border-black pb-2 mb-4 text-black">Training</h2>
             <ul className="space-y-2 text-gray-700">
-              <li><span className="font-medium">HB Studio</span>, New York — Meisner Technique</li>
-              <li><span className="font-medium">Stella Adler Studio of Acting</span>, New York — Classical Training</li>
-              <li><span className="font-medium">UCB Improv Program</span>, New York — Improvisation</li>
+              <li><span className="font-medium text-black">HB Studio</span>, New York — Meisner Technique</li>
+              <li><span className="font-medium text-black">Stella Adler Studio of Acting</span>, New York — Classical Training</li>
+              <li><span className="font-medium text-black">UCB Improv Program</span>, New York — Improvisation</li>
             </ul>
           </div>
 
           {/* Special Skills */}
           <div className="mb-8">
-            <h2 className="text-xl font-semibold border-b border-black pb-2 mb-4">Special Skills</h2>
+            <h2 className="text-xl font-semibold border-b border-black pb-2 mb-4 text-black">Special Skills</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <ul className="list-disc list-inside text-gray-700 space-y-1">
                 <li>Stage Combat (Basic)</li>
@@ -79,9 +79,9 @@ export default function ResumePage() {
 
           {/* Writing Awards */}
           <div className="mb-8">
-            <h2 className="text-xl font-semibold border-b border-black pb-2 mb-4">Writing Awards</h2>
+            <h2 className="text-xl font-semibold border-b border-black pb-2 mb-4 text-black">Writing Awards</h2>
             <div className="bg-gray-50 p-6 rounded-2xl">
-              <p className="font-medium italic mb-2">Half the Sky</p>
+              <p className="font-medium italic mb-2 text-black">Half the Sky</p>
               <p className="text-sm text-gray-600 mb-3">Feature-length screenplay about the first Chinese American female pilot during WWII</p>
               <div className="flex flex-wrap gap-2">
                 <span className="text-xs bg-black text-white px-2 py-1 rounded">Austin Film Festival Quarterfinalist</span>
@@ -92,13 +92,13 @@ export default function ResumePage() {
 
           {/* Representation */}
           <div className="mb-8">
-            <h2 className="text-xl font-semibold border-b border-black pb-2 mb-4">Representation</h2>
-            <p><span className="font-medium">Ken Park Talent Management</span></p>
+            <h2 className="text-xl font-semibold border-b border-black pb-2 mb-4 text-black">Representation</h2>
+            <p className="text-gray-700"><span className="font-medium text-black">Ken Park Talent Management</span></p>
             <p className="text-gray-600">kenparktalent@gmail.com</p>
             <p className="text-gray-600">(212) 566-8672</p>
           </div>
 
-          {/* Download PDF Option (small, not prominent) */}
+          {/* Download PDF Option */}
           <div className="text-center mt-12 pt-6 border-t border-gray-200">
             <a 
               href="/resume.pdf" 
