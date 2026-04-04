@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
@@ -42,31 +41,52 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Animated Hamburger Menu Button - Mobile Only */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`md:hidden relative w-8 h-8 flex items-center justify-center ${textColor}`}
+              className="md:hidden relative w-8 h-8 flex flex-col items-center justify-center gap-1.5 z-50"
+              aria-label="Toggle menu"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {/* Top line */}
+              <span 
+                className={`w-6 h-0.5 rounded-full transition-all duration-300 ease-out ${
+                  isOpen ? "rotate-45 translate-y-2" : ""
+                } ${textColor}`}
+                style={{ backgroundColor: isHomePage ? "white" : "black" }}
+              />
+              {/* Middle line - fades out when open */}
+              <span 
+                className={`w-6 h-0.5 rounded-full transition-all duration-300 ease-out ${
+                  isOpen ? "opacity-0" : "opacity-100"
+                } ${textColor}`}
+                style={{ backgroundColor: isHomePage ? "white" : "black" }}
+              />
+              {/* Bottom line */}
+              <span 
+                className={`w-6 h-0.5 rounded-full transition-all duration-300 ease-out ${
+                  isOpen ? "-rotate-45 -translate-y-2" : ""
+                } ${textColor}`}
+                style={{ backgroundColor: isHomePage ? "white" : "black" }}
+              />
             </button>
           </div>
         </div>
       </nav>
 
-      {/* Mobile Menu Panel */}
+      {/* Mobile Menu Panel - Slides in from right */}
       <div
-        className={`fixed top-16 left-0 right-0 bottom-0 z-40 ${mobileMenuBg} backdrop-blur-md transform transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed top-0 right-0 bottom-0 z-40 w-full max-w-sm ${mobileMenuBg} backdrop-blur-md transform transition-transform duration-500 ease-in-out md:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className={`flex flex-col items-center justify-center h-full gap-8 text-xl ${mobileTextColor}`}>
-          <Link href="/about" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
+          <Link href="/about" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition text-2xl">
             About
           </Link>
-          <Link href="/resume" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
+          <Link href="/resume" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition text-2xl">
             Resume
           </Link>
-          <Link href="/contact" onClick={() => setIsOpen(false)} className={`px-6 py-3 rounded-full transition ${buttonBg}`}>
+          <Link href="/contact" onClick={() => setIsOpen(false)} className={`px-6 py-3 rounded-full transition ${buttonBg} text-lg`}>
             Contact
           </Link>
         </div>
