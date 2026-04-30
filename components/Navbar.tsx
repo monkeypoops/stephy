@@ -35,22 +35,22 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <Link href="/" className={`text-xl font-bold tracking-tighter ${textColor}`}>
+            <Link href="/" className={`text-xl md:text-2xl font-bold tracking-tighter ${textColor}`}>
               STEPHY
             </Link>
 
-            {/* Desktop Menu */}
+            {/* Desktop Menu - Larger font for web */}
             <div className="hidden md:flex items-center gap-8">
-              <Link href="/about" className={`text-sm transition ${linkColor}`}>
+              <Link href="/about" className={`text-base md:text-lg transition ${linkColor}`}>
                 About
               </Link>
-              <Link href="/press" className={`text-sm transition ${linkColor}`}>
+              <Link href="/press" className={`text-base md:text-lg transition ${linkColor}`}>
                 Press
               </Link>
-              <Link href="/resume" className={`text-sm transition ${linkColor}`}>
+              <Link href="/resume" className={`text-base md:text-lg transition ${linkColor}`}>
                 Resume
               </Link>
-              <Link href="/contact" className={`px-4 py-2 text-sm rounded-full transition ${buttonBg}`}>
+              <Link href="/contact" className={`px-5 py-2 text-base md:text-lg rounded-full transition ${buttonBg}`}>
                 Contact
               </Link>
             </div>

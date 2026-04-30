@@ -3,8 +3,9 @@
 export default function ScrollingLogos() {
   const festivals = [
     "L'Officiel",
-    "Edible Manhattan",
+    "Forbes",
     "Arts Fuse",
+    "Edible Manhattan",
     "Festival of Cinema NYC",
     "Soho London Independent Film Festival",
     "New York Science Fiction Film Festival",

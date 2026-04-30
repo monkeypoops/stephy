@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import TypewriterText from "./TypewriterText";
 
 export default function Hero() {
   return (
@@ -25,9 +26,9 @@ export default function Hero() {
         <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-6 tracking-tighter">
           Stephy.
         </h1>
-        <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto mb-12 font-handwritten animate-float">
-          Welcome to my world
-        </p>
+        <div className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto mb-12 font-handwritten">
+          <TypewriterText />
+        </div>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link href="/about">
             <button className="px-8 py-4 bg-black text-white rounded-full font-semibold hover:bg-gray-800 transition flex items-center justify-center gap-2 group">
