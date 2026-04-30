@@ -1,52 +1,33 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   
-  // Check if we're on the homepage
-  const isHomePage = pathname === "/";
+  // Pages where navbar should be black
+  const darkPages = ["/press", "/resume", "/contact"];
+  const isDarkPage = darkPages.includes(pathname);
   
-  // For About page, check scroll position
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    
-    if (pathname === "/about") {
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
-    }
-  }, [pathname]);
-  
-  // Determine text color
+  // Text colors: white on Home and About, black on Press/Resume/Contact
   let textColor = "text-white";
-  let logoColor = "text-white";
-  let buttonBg = "bg-white text-black";
+  let linkColor = "text-white/80 hover:text-white";
+  let buttonBg = "bg-white text-black hover:bg-gray-100";
   let mobileMenuBg = "bg-black/95";
   let mobileTextColor = "text-white";
+  let hamburgerColor = "bg-white";
   
-  // On About page, change to black after scrolling
-  if (pathname === "/about" && scrolled) {
+  if (isDarkPage) {
     textColor = "text-black";
-    logoColor = "text-black";
-    buttonBg = "bg-black text-white";
+    linkColor = "text-gray-700 hover:text-black";
+    buttonBg = "bg-black text-white hover:bg-gray-800";
     mobileMenuBg = "bg-white";
     mobileTextColor = "text-black";
-  }
-  
-  // On non-homepage, non-about pages (Resume, Contact), use black
-  if (pathname !== "/" && pathname !== "/about") {
-    textColor = "text-black";
-    logoColor = "text-black";
-    buttonBg = "bg-black text-white";
-    mobileMenuBg = "bg-white";
-    mobileTextColor = "text-black";
+    hamburgerColor = "bg-black";
   }
 
   return (
@@ -55,16 +36,19 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <Link href="/" className={`text-xl font-bold tracking-tighter ${logoColor}`}>
+            <Link href="/" className={`text-xl font-bold tracking-tighter ${textColor}`}>
               STEPHY
             </Link>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
-              <Link href="/about" className={`text-sm ${textColor}/80 hover:${textColor} transition`}>
+              <Link href="/about" className={`text-sm transition ${linkColor}`}>
                 About
               </Link>
-              <Link href="/resume" className={`text-sm ${textColor}/80 hover:${textColor} transition`}>
+              <Link href="/press" className={`text-sm transition ${linkColor}`}>
+                Press
+              </Link>
+              <Link href="/resume" className={`text-sm transition ${linkColor}`}>
                 Resume
               </Link>
               <Link href="/contact" className={`px-4 py-2 text-sm rounded-full transition ${buttonBg}`}>
@@ -72,30 +56,14 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Animated Hamburger Menu Button */}
+            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="md:hidden relative w-8 h-8 flex flex-col items-center justify-center gap-1.5 z-50"
-              aria-label="Toggle menu"
             >
-              <span 
-                className={`w-6 h-0.5 rounded-full transition-all duration-300 ease-out ${
-                  isOpen ? "rotate-45 translate-y-2" : ""
-                }`}
-                style={{ backgroundColor: textColor === "text-white" ? "white" : "black" }}
-              />
-              <span 
-                className={`w-6 h-0.5 rounded-full transition-all duration-300 ease-out ${
-                  isOpen ? "opacity-0" : "opacity-100"
-                }`}
-                style={{ backgroundColor: textColor === "text-white" ? "white" : "black" }}
-              />
-              <span 
-                className={`w-6 h-0.5 rounded-full transition-all duration-300 ease-out ${
-                  isOpen ? "-rotate-45 -translate-y-2" : ""
-                }`}
-                style={{ backgroundColor: textColor === "text-white" ? "white" : "black" }}
-              />
+              <span className={`w-6 h-0.5 rounded-full transition-all duration-300 ease-out ${hamburgerColor}`} />
+              <span className={`w-6 h-0.5 rounded-full transition-all duration-300 ease-out ${hamburgerColor}`} />
+              <span className={`w-6 h-0.5 rounded-full transition-all duration-300 ease-out ${hamburgerColor}`} />
             </button>
           </div>
         </div>
@@ -108,15 +76,18 @@ export default function Navbar() {
         }`}
       >
         <div className={`flex flex-col items-center justify-center h-full gap-8 text-xl ${mobileTextColor}`}>
-          <Link href="/about" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition text-2xl">
+          <Link href="/about" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
             About
           </Link>
-          <Link href="/resume" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition text-2xl">
+          <Link href="/press" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
+            Press
+          </Link>
+          <Link href="/resume" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
             Resume
           </Link>
-          <Link href="/contact" onClick={() => setIsOpen(false)} className={`px-6 py-3 rounded-full transition ${buttonBg} text-lg`}>
-            Contact
-          </Link>
+         <Link href="/contact" className={`px-4 py-2 text-sm rounded-full transition bg-white text-black hover:bg-gray-100`}>
+  Contact
+</Link>
         </div>
       </div>
     </>

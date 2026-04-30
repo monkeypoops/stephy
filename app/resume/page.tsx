@@ -8,20 +8,10 @@ export default function ResumePage() {
       <main className="pt-32 pb-20 min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8">
           
-          {/* Header with Headshot */}
           <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
-            {/* Headshot */}
             <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden shadow-lg flex-shrink-0">
-              <Image
-                src="/headshot.jpg"
-                alt="Stephanie Cheng Headshot"
-                width={160}
-                height={160}
-                className="w-full h-full object-cover"
-              />
+              <Image src="/headshot.jpg" alt="Stephanie Cheng Headshot" width={160} height={160} className="w-full h-full object-cover" />
             </div>
-            
-            {/* Name and Title */}
             <div className="text-center md:text-left">
               <h1 className="text-5xl md:text-6xl font-bold tracking-tighter mb-2 text-black">Stephanie Cheng</h1>
               <p className="text-gray-600 text-lg">Actor | Screenwriter | Storyteller</p>
@@ -29,7 +19,6 @@ export default function ResumePage() {
             </div>
           </div>
 
-          {/* Contact Info Row - Email only */}
           <div className="text-center mb-12">
             <p className="text-gray-600">New York, NY</p>
             <p className="text-gray-600">
@@ -39,7 +28,6 @@ export default function ResumePage() {
             </p>
           </div>
 
-          {/* Languages */}
           <div className="mb-8">
             <h2 className="text-xl font-semibold border-b border-black pb-2 mb-4 text-black">Languages</h2>
             <div className="flex flex-wrap gap-3">
@@ -50,7 +38,6 @@ export default function ResumePage() {
             </div>
           </div>
 
-          {/* Training */}
           <div className="mb-8">
             <h2 className="text-xl font-semibold border-b border-black pb-2 mb-4 text-black">Training</h2>
             <ul className="space-y-2 text-gray-700">
@@ -60,7 +47,6 @@ export default function ResumePage() {
             </ul>
           </div>
 
-          {/* Special Skills */}
           <div className="mb-8">
             <h2 className="text-xl font-semibold border-b border-black pb-2 mb-4 text-black">Special Skills</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -77,7 +63,6 @@ export default function ResumePage() {
             </div>
           </div>
 
-          {/* Writing Awards */}
           <div className="mb-8">
             <h2 className="text-xl font-semibold border-b border-black pb-2 mb-4 text-black">Writing Awards</h2>
             <div className="bg-gray-50 p-6 rounded-2xl">
@@ -90,7 +75,6 @@ export default function ResumePage() {
             </div>
           </div>
 
-          {/* Representation */}
           <div className="mb-8">
             <h2 className="text-xl font-semibold border-b border-black pb-2 mb-4 text-black">Representation</h2>
             <p className="text-gray-700"><span className="font-medium text-black">Ken Park Talent Management</span></p>
@@ -98,13 +82,8 @@ export default function ResumePage() {
             <p className="text-gray-600">(212) 566-8672</p>
           </div>
 
-          {/* Download PDF Option */}
           <div className="text-center mt-12 pt-6 border-t border-gray-200">
-            <a 
-              href="/resume.pdf" 
-              download
-              className="text-sm text-gray-400 hover:text-black transition"
-            >
+            <a href="/resume.pdf" download className="text-sm text-gray-400 hover:text-black transition">
               ↓ Download PDF version (optional)
             </a>
           </div>
