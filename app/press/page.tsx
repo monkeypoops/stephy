@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Link from "next/link";
+import ScrollingLogos from "@/components/ScrollingLogos";
 
 export default function PressPage() {
   return (
@@ -18,9 +19,9 @@ export default function PressPage() {
             </h1>
           </div>
           
-          {/* Centered Squircle Portrait */}
-          <div className="relative z-10 flex justify-center items-center px-4">
-            <div className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] rounded-3xl overflow-hidden shadow-2xl">
+          {/* Centered Squircle Portrait with Scrolling Logos */}
+          <div className="relative z-10 flex flex-col items-center justify-center px-4">
+            <div className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] rounded-3xl overflow-hidden shadow-2xl mb-8">
               <Image
                 src="/images/L'Officiel Stephy.jpeg"
                 alt="Stephy"
@@ -29,13 +30,16 @@ export default function PressPage() {
                 priority
               />
             </div>
+            
+            {/* Scrolling Logos Marquee */}
+            <ScrollingLogos />
           </div>
         </section>
 
         {/* Magazine Features Grid - 3x2 */}
-        <section className="py-20 bg-white">
+        <section className="py-4 bg-white">
           <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 tracking-tighter">Magazine Features</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-2 tracking-tighter">Magazine Features</h2>
             <p className="text-center text-gray-500 mb-12">Featured in publications around the world</p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -127,7 +131,7 @@ export default function PressPage() {
                 <a href="https://www.instagram.com/p/DXZmRBojaqb/?igsh=MzB5MGp1dXE3M2lt" className="text-sm text-black hover:underline inline-block mt-2">Read Article →</a>
               </div>
 
-                            <div className="border-b border-gray-200 pb-4">
+              <div className="border-b border-gray-200 pb-4">
                 <div className="text-sm text-gray-400 mb-1">2025</div>
                 <h3 className="text-lg font-semibold">Sundance Institute</h3>
                 <p className="text-gray-600">Second Rounder - Half the Sky</p>
@@ -140,7 +144,6 @@ export default function PressPage() {
                 <p className="text-gray-600">Quarterfinalist - Half the Sky</p>
                 <a href="#" className="text-sm text-black hover:underline inline-block mt-2">View Recognition →</a>
               </div>
-            
             </div>
           </div>
         </section>

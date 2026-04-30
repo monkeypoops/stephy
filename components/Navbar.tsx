@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
@@ -56,20 +55,36 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - Spins into X */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden relative w-8 h-8 flex flex-col items-center justify-center gap-1.5 z-50"
+              className="md:hidden relative w-8 h-8 flex items-center justify-center z-50"
+              aria-label="Toggle menu"
             >
-              <span className={`w-6 h-0.5 rounded-full transition-all duration-300 ease-out ${hamburgerColor}`} />
-              <span className={`w-6 h-0.5 rounded-full transition-all duration-300 ease-out ${hamburgerColor}`} />
-              <span className={`w-6 h-0.5 rounded-full transition-all duration-300 ease-out ${hamburgerColor}`} />
+              {/* Top line - rotates down to form X */}
+              <span 
+                className={`absolute w-6 h-0.5 rounded-full transition-all duration-300 ease-in-out ${hamburgerColor} ${
+                  isOpen ? "rotate-45" : "-translate-y-2"
+                }`} 
+              />
+              {/* Middle line - fades out when open */}
+              <span 
+                className={`absolute w-6 h-0.5 rounded-full transition-all duration-300 ease-in-out ${hamburgerColor} ${
+                  isOpen ? "opacity-0" : "opacity-100"
+                }`} 
+              />
+              {/* Bottom line - rotates up to form X */}
+              <span 
+                className={`absolute w-6 h-0.5 rounded-full transition-all duration-300 ease-in-out ${hamburgerColor} ${
+                  isOpen ? "-rotate-45" : "translate-y-2"
+                }`} 
+              />
             </button>
           </div>
         </div>
       </nav>
 
-      {/* Mobile Menu Panel */}
+      {/* Mobile Menu Panel - Slides in from right */}
       <div
         className={`fixed top-0 right-0 bottom-0 z-40 w-full max-w-sm ${mobileMenuBg} backdrop-blur-md transform transition-transform duration-500 ease-in-out md:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
@@ -85,9 +100,9 @@ export default function Navbar() {
           <Link href="/resume" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
             Resume
           </Link>
-         <Link href="/contact" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition text-xl">
-  Contact
-</Link>
+          <Link href="/contact" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
+            Contact
+          </Link>
         </div>
       </div>
     </>

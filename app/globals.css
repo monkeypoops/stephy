@@ -38,3 +38,42 @@
   font-weight: 500;
   font-style: italic;
 }
+
+/* Scrolling logos animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+  display: inline-block;
+}
+
+/* Pause animation on hover */
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
