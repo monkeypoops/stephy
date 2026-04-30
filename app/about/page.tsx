@@ -93,7 +93,7 @@ export default function AboutPage() {
             </div>
 
             {/* Down Arrow - Scroll to Community Section - YELLOW */}
-            <div className="flex justify-center mt-8">
+            <div className="flex justify-center mt-4">
               <button
                 onClick={scrollToCommunity}
                 className="cursor-pointer"
@@ -107,7 +107,7 @@ export default function AboutPage() {
 
         {/* Films & Projects Section */}
         <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8">
-          <div className="border-t border-gray-100 pt-12 mt-8">
+          <div className="border-t border-gray-100 pt-6 mt-2">
             <h2 className="text-2xl font-semibold mb-6 text-center">Featured Work</h2>
             <p className="text-center text-gray-600 mb-8">Films and projects I've been part of</p>
             <div className="flex flex-wrap justify-center items-start gap-6 md:gap-8 mb-16">

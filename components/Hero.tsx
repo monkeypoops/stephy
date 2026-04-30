@@ -28,7 +28,7 @@ export default function Hero() {
         <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto mb-12 font-handwritten animate-float">
           Welcome to my world
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link href="/about">
             <button className="px-8 py-4 bg-black text-white rounded-full font-semibold hover:bg-gray-800 transition flex items-center justify-center gap-2 group">
               About Me

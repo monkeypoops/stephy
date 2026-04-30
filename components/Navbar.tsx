@@ -85,7 +85,7 @@ export default function Navbar() {
           <Link href="/resume" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
             Resume
           </Link>
-         <Link href="/contact" className={`px-4 py-2 text-sm rounded-full transition bg-white text-black hover:bg-gray-100`}>
+         <Link href="/contact" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition text-xl">
   Contact
 </Link>
         </div>
