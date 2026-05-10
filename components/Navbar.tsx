@@ -8,11 +8,12 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   
-  // Pages where navbar should be black
-  const darkPages = ["/press", "/resume", "/contact"];
-  const isDarkPage = darkPages.includes(pathname);
+  // Pages with light background (need dark text)
+  const darkTextPages = ["/about", "/press", "/resume", "/contact"];
+  const needsDarkText = darkTextPages.includes(pathname);
+  const isHomePage = pathname === "/";
   
-  // Text colors: white on Home and About, black on Press/Resume/Contact
+  // Set colors based on page
   let textColor = "text-white";
   let linkColor = "text-white/80 hover:text-white";
   let buttonBg = "bg-white text-black hover:bg-gray-100";
@@ -20,7 +21,7 @@ export default function Navbar() {
   let mobileTextColor = "text-white";
   let hamburgerColor = "bg-white";
   
-  if (isDarkPage) {
+  if (needsDarkText) {
     textColor = "text-black";
     linkColor = "text-gray-700 hover:text-black";
     buttonBg = "bg-black text-white hover:bg-gray-800";
@@ -39,7 +40,7 @@ export default function Navbar() {
               STEPHY
             </Link>
 
-            {/* Desktop Menu - Larger font for web */}
+            {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
               <Link href="/about" className={`text-base md:text-lg transition ${linkColor}`}>
                 About
@@ -55,54 +56,26 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Mobile Menu Button - Spins into X */}
+            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="md:hidden relative w-8 h-8 flex items-center justify-center z-50"
-              aria-label="Toggle menu"
             >
-              {/* Top line - rotates down to form X */}
-              <span 
-                className={`absolute w-6 h-0.5 rounded-full transition-all duration-300 ease-in-out ${hamburgerColor} ${
-                  isOpen ? "rotate-45" : "-translate-y-2"
-                }`} 
-              />
-              {/* Middle line - fades out when open */}
-              <span 
-                className={`absolute w-6 h-0.5 rounded-full transition-all duration-300 ease-in-out ${hamburgerColor} ${
-                  isOpen ? "opacity-0" : "opacity-100"
-                }`} 
-              />
-              {/* Bottom line - rotates up to form X */}
-              <span 
-                className={`absolute w-6 h-0.5 rounded-full transition-all duration-300 ease-in-out ${hamburgerColor} ${
-                  isOpen ? "-rotate-45" : "translate-y-2"
-                }`} 
-              />
+              <span className={`absolute w-6 h-0.5 rounded-full transition-all duration-300 ease-in-out ${hamburgerColor} ${isOpen ? "rotate-45" : "-translate-y-2"}`} />
+              <span className={`absolute w-6 h-0.5 rounded-full transition-all duration-300 ease-in-out ${hamburgerColor} ${isOpen ? "opacity-0" : "opacity-100"}`} />
+              <span className={`absolute w-6 h-0.5 rounded-full transition-all duration-300 ease-in-out ${hamburgerColor} ${isOpen ? "-rotate-45" : "translate-y-2"}`} />
             </button>
           </div>
         </div>
       </nav>
 
-      {/* Mobile Menu Panel - Slides in from right */}
-      <div
-        className={`fixed top-0 right-0 bottom-0 z-40 w-full max-w-sm ${mobileMenuBg} backdrop-blur-md transform transition-transform duration-500 ease-in-out md:hidden ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
+      {/* Mobile Menu Panel */}
+      <div className={`fixed top-0 right-0 bottom-0 z-40 w-full max-w-sm ${mobileMenuBg} backdrop-blur-md transform transition-transform duration-500 ease-in-out md:hidden ${isOpen ? "translate-x-0" : "translate-x-full"}`}>
         <div className={`flex flex-col items-center justify-center h-full gap-8 text-xl ${mobileTextColor}`}>
-          <Link href="/about" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
-            About
-          </Link>
-          <Link href="/press" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
-            Press
-          </Link>
-          <Link href="/resume" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
-            Resume
-          </Link>
-          <Link href="/contact" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">
-            Contact
-          </Link>
+          <Link href="/about" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">About</Link>
+          <Link href="/press" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">Press</Link>
+          <Link href="/resume" onClick={() => setIsOpen(false)} className="hover:text-gray-500 transition">Resume</Link>
+          <Link href="/contact" onClick={() => setIsOpen(false)} className={`px-6 py-3 rounded-full transition ${buttonBg}`}>Contact</Link>
         </div>
       </div>
     </>

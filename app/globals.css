@@ -25,21 +25,6 @@
   }
 }
 
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-spin-slow {
-  animation: spin-slow 10s linear infinite;
-}
-
-.font-handwritten {
-  font-family: var(--font-handwritten);
-  font-weight: 500;
-  font-style: italic;
-}
-
-/* Scrolling logos animation */
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -47,35 +32,6 @@
   100% {
     transform: translateX(-50%);
   }
-}
-
-.animate-scroll {
-  animation: scroll 30s linear infinite;
-  display: inline-block;
-}
-
-/* Pause animation on hover */
-.animate-scroll:hover {
-  animation-play-state: paused;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-scroll {
-  animation: scroll 30s linear infinite;
-  display: inline-block;
-  white-space: nowrap;
-}
-
-.animate-scroll:hover {
-  animation-play-state: paused;
 }
 
 @keyframes blink {
@@ -87,6 +43,30 @@
   }
 }
 
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
 .animate-blink {
   animation: blink 1s step-end infinite;
+}
+
+.font-handwritten {
+  font-family: var(--font-handwritten);
+  font-weight: 500;
+  font-style: italic;
 }

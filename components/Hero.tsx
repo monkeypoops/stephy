@@ -36,9 +36,9 @@ export default function Hero() {
               <ArrowRight size={20} className="group-hover:translate-x-1 transition" />
             </button>
           </Link>
-          <Link href="/resume">
+          <Link href="/press">
             <button className="px-8 py-4 bg-white text-black border-2 border-black rounded-full font-semibold hover:bg-black hover:text-white transition">
-              My Resume
+              Press
             </button>
           </Link>
         </div>

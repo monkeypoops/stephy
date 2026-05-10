@@ -3,20 +3,22 @@
 export default function ScrollingLogos() {
   const festivals = [
     "L'Officiel",
-    "Forbes",
-    "Arts Fuse",
     "Edible Manhattan",
+    "Arts Fuse",
     "Festival of Cinema NYC",
     "Soho London Independent Film Festival",
     "New York Science Fiction Film Festival",
     "New York State International Film Festival",
     "Independent Film Festival Boston",
-    "BELIFF Be Epic London International Film Festival",
-    "Scottish Queer International Film Festival",
+    "Beliff be epic london international film festival",
+    "Scottish Queer international film festival",
     "New York Lift-Off Film Festival",
     "Romford Horror Film Festival",
     "Silicon Valley Asian Pacific Film Fest",
   ];
+
+  // Triple for seamless looping
+  const scrollingFestivals = [...festivals, ...festivals, ...festivals];
 
   // Function to determine font size based on text length
   const getFontSize = (text: string) => {
@@ -26,11 +28,8 @@ export default function ScrollingLogos() {
     return "text-[10px] md:text-xs";
   };
 
-  // Triple for seamless looping
-  const scrollingFestivals = [...festivals, ...festivals, ...festivals];
-
   return (
-    <div className="w-full overflow-hidden py-2 bg-white relative">
+    <div className="w-full overflow-hidden py-4 bg-black">
       <div className="animate-scroll inline-block whitespace-nowrap">
         {scrollingFestivals.map((festival, index) => {
           const fontSize = getFontSize(festival);
@@ -39,10 +38,11 @@ export default function ScrollingLogos() {
           return (
             <span
               key={index}
-              className={`inline-block mx-4 text-black align-middle ${fontSize} ${isShort ? 'font-medium' : ''}`}
+              className={`inline-block mx-4 text-white align-middle ${fontSize} ${isShort ? 'font-medium' : ''}`}
               style={{ whiteSpace: 'nowrap' }}
             >
               {festival}
+              <span className="mx-2 text-gray-500">•</span>
             </span>
           );
         })}
